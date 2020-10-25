@@ -20,7 +20,12 @@ $(function () {
                     alert('Error loading user info')
                 });
         }
+
+
     })
+    $('.followButton').click(function (){
+        console.log("APPI")
+    });
 
 })
 
