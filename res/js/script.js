@@ -7,23 +7,21 @@ $(function () {
         } else {
             $(".dropdown-content").show();
             $(this).attr('id', '1');
-            loadUserInfo()
-                .then(function (response) {
-                    user = new User(
-                        response.firstname,
-                        response.lastname,
-                        response.email,
-                    );
-                    displayUserInfo(user)
-                    $(".avatar").attr("src",response.avatar);
-                })
-                .catch(function () {
-                    alert('Error loading user info')
-                });
         }
-
-
     })
+    loadUserInfo()
+        .then(function (response) {
+            user = new User(
+                response.firstname,
+                response.lastname,
+                response.email,
+            );
+            displayUserInfo(user)
+            $(".avatar").attr("src",response.avatar);
+        })
+        .catch(function () {
+            alert('Error loading user info')
+        });
     $('.followButton').click(function (){
         console.log("APPI")
     });
@@ -33,13 +31,18 @@ $(function () {
         $(this).addClass('like-button-liked')
 
     })
+    loadPostsInfo()
+        .then(function (response){
+        for (const argument of arguments) {
+
+        }
+    })
 
 })
 
 function displayUserInfo(user) {
     $('#name').text(user.firstname + " " + user.lastname);
     $('#mail').text(user.email);
-
 }
 
 function loadUserInfo() {
