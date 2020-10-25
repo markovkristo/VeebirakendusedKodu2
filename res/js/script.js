@@ -12,9 +12,10 @@ $(function () {
                     user = new User(
                         response.firstname,
                         response.lastname,
-                        response.email
+                        response.email,
                     );
                     displayUserInfo(user)
+                    $(".avatar").attr("src",response.avatar);
                 })
                 .catch(function () {
                     alert('Error loading user info')
@@ -38,6 +39,7 @@ $(function () {
 function displayUserInfo(user) {
     $('#name').text(user.firstname + " " + user.lastname);
     $('#mail').text(user.email);
+
 }
 
 function loadUserInfo() {

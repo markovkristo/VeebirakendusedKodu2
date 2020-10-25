@@ -23,7 +23,6 @@ $(function () {
 
 function jumalhoiab(obj){
 
-
     if ($(obj).hasClass('followButton-following')){
         $(obj).removeClass('followButton-following');
         $(obj).addClass('followButton');
