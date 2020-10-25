@@ -1,3 +1,4 @@
+
 $(function () {
     $(".avatar").click(function () {
         var X = $(this).attr('id');
@@ -27,6 +28,12 @@ $(function () {
         console.log("APPI")
     });
 
+    $('.like-button').click(function(){
+        $('.like-button').removeClass('like-button');
+        $(this).addClass('like-button-liked')
+
+    })
+
 })
 
 function displayUserInfo(user) {
@@ -47,5 +54,22 @@ function loadUserInfo() {
         }
     );
 }
+function createPost(){
+    for (x in posts){
 
+    }
+}
+function loadPostsInfo() {
+    return $.get(
+        {
+            url: 'https://private-anon-beb5f99180-wad20postit.apiary-mock.com/posts',
+            success : function (response) {
+                return response;
+            },
+            error: function (){
+                alert('error')
+            }
+        }
+    )
+}
 /**/
