@@ -33,7 +33,7 @@ $(function () {
     })
     loadPostsInfo()
         .then(function (response){
-        for (const argument of arguments) {
+        for (post of response) {
 
         }
     })
